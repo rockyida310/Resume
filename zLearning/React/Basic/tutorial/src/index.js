@@ -4,64 +4,22 @@ import ReactDomClient from "react-dom/client";
 //CSS
 
 import "./index.css";
-
-const books = [{
-  id: 1,
-  title: "Attitude Is Everything: Change Your Attitude ... Change Your Life!",
-  authorName: "Jeff Keller",
-  imageUrl: "https://m.media-amazon.com/images/I/71sBtM3Yi5L._AC_UY327_FMwebp_QL65_.jpg"
-},
-{
-  id: 2,
-  title: "The Power of Your Subconscious Mind",
-  authorName: "Joseph Murphy",
-  imageUrl: "https://m.media-amazon.com/images/I/71sBtM3Yi5L._AC_UY327_FMwebp_QL65_.jpg"
-}];
-
+import {books} from "./components/books";
+import Book from './components/Book'
+// named export must match exactly , 
+// for javascript file we need not to write extension name
 
 function BookList() {
   return (
     <>
       <section className="booklist">
-       {books.map((book,i) => {
-         return(
-          <Book key={book.id} {...book} ></Book>
-        );
-       })}
+        {books.map((book, i) => {
+          return <Book key={book.id} {...book}></Book>;
+        })}
       </section>
     </>
   );
 }
-
-
-const Book = (props) => {
-  //attribute, eventHandle
-  //onClick,onMouseOver
-
-  const clickHandler = (e) => {
-    console.log(e);
-    console.log(e.target);
-    console.log(props.title);
-  }
-
-  const complexExample = (authorName) => {
-    console.log(authorName);
-  }
-
-  return (
-    <>
-      <article className="book" onMouseOver={()=>{
-        console.log(props.title);
-      }}>
-        <img src={props.imageUrl} alt="" />
-        <h1 onClick={() => console.log(props.title)} >{props.title}</h1>
-        <h4 className="author">{props.authorName}</h4>
-        <button type="button" onClick={clickHandler}>clickMe</button>
-        <button type="button" onClick={() => complexExample(props.authorName)}>Complex</button>
-      </article>
-    </>
-  );
-};
 
 
 // takes two things --> what we want to render , where we want to render
