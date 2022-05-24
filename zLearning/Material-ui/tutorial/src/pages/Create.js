@@ -1,8 +1,12 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Button from "@mui/material/Button";
-// import ButtonGroup from "@mui/material/ButtonGroup";
-import Container from '@mui/material/Container';
+import Container from "@mui/material/Container";
+// import AcUnitOutlinedIcon from '@mui/icons-material/AcUnitOutlined';
+import SendIcon from '@mui/icons-material/Send';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+
+// iconsURL -  https://mui.com/material-ui/material-icons/#main-content
 
 export default function Create() {
   return (
@@ -16,29 +20,27 @@ export default function Create() {
         Create a New Note
       </Typography>
 
-      {/* <Button
-        type="submit"
-        color="primary"
-        variant='outlined'
-      >
-        Submit
-      </Button> */}
-
-      {/* <ButtonGroup color="secondary" variant="contained">
-        <Button>One</Button>
-        <Button>Two</Button>
-        <Button>Three</Button>
-      </ButtonGroup> */}
       <Button
-        onClick={()=> console.log('You clicked me')}
+        onClick={() => console.log("You clicked me")}
         type="submit"
         color="secondary"
         variant="contained"
-        // disableElevation
+        // startIcon={<SendIcon/>}
+        endIcon={<KeyboardArrowRightIcon/>}
       >
         Submit
       </Button>
-      {/* disableElevation for no shadow */}
+
+      <br/>
+
+      {/* <AcUnitOutlinedIcon/>
+      <AcUnitOutlinedIcon color="secondary" fontSize="large" />
+      <AcUnitOutlinedIcon color="secondary" fontSize="small" />
+      <AcUnitOutlinedIcon color="action" fontSize="small" />
+      <AcUnitOutlinedIcon color="error" fontSize="small" />
+      <AcUnitOutlinedIcon color="disabled" fontSize="small" /> */}
+
+
     </Container>
   );
 }
