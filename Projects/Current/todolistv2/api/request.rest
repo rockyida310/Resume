@@ -1,0 +1,16 @@
+#  GET http://localhost:3001/todos
+
+# ---
+
+ POST http://localhost:3001/todo/new
+ Content-Type: application/json
+
+ {
+     "text" : "Order biryani"
+ }
+
+#  ---
+
+# DELETE http://localhost:3001/todo/delete/629a0fcecb7667eda4b7426d
+
+# PUT http://localhost:3001/todo/complete/629a0fcecb7667eda4b7426d
